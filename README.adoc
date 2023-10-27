@@ -1,0 +1,68 @@
+= CloudBees action: Deploy with Argo CD
+
+Use this action to deploy a repository with Argo CD, a declarative, GitOps continuous delivery tool for Kubernetes.
+
+== Inputs
+
+[cols="2a,1a,1a,3a",options="header"]
+.Input details
+|===
+
+| Input name
+| Data type
+| Required?
+| Description
+
+| `url`
+| String
+| Yes
+| The Argo CD server URL.
+
+| `token`
+| String
+| Yes
+| The Argo CD token.
+
+| `namespace`
+| String
+| Yes
+| The Argo CD namespace.
+
+| `workflow-name`
+| String
+| Yes
+| The Argo CD workflow name.
+
+| `parameters`
+| JSON
+| No
+| Any additional parameters, formatted as JSON data in key/value pairs.
+
+|===
+
+== Usage example
+
+In your YAML file, add:
+
+[source,yaml]
+----
+      - name: Deploy with Argo CD
+        uses: cloudbees-io/argocd-run-workflow@v2
+        with:
+          url: ${{ ARGO_CD_URL }}
+          token: ${{ ARGO_CD_TOKEN }}
+          namespace: "Argo_CD_namespace"
+          workflow-name: "Argo_CD_workflow_name"
+          parameters: '{"BRANCH_NAME":"main","ENV_NAME":"prod"}'
+
+----
+
+== License
+
+This code is made available under the 
+link:https://opensource.org/license/mit/[MIT license].
+
+== References
+
+* Learn more about link:https://docs.cloudbees.com/docs/cloudbees-saas-platform-actions/latest/[using actions in CloudBees workflows].
+* Learn about link:https://docs.cloudbees.com/docs/cloudbees-saas-platform/latest/[the CloudBees platform].
