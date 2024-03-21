@@ -1,4 +1,4 @@
-= CloudBees action: Deploy with Argo Workflow
+= CloudBees action: Deploy with Argo Workflows
 
 Use this action to run Argo Workflows, a CI/CD pipeline tool for managing and executing complex workflows in Kubernetes.
 
