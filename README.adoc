@@ -1,6 +1,6 @@
-= CloudBees action: Deploy with Argo CD
+= CloudBees action: Deploy with Argo Workflows
 
-Use this action to deploy a repository with Argo CD, a declarative, GitOps continuous delivery tool for Kubernetes.
+Use this action to run Argo Workflows, a CI/CD pipeline tool for managing and executing complex workflows in Kubernetes.
 
 == Inputs
 
@@ -16,22 +16,22 @@ Use this action to deploy a repository with Argo CD, a declarative, GitOps conti
 | `url`
 | String
 | Yes
-| The Argo CD server URL.
+| The Argo Workflows server URL.
 
 | `token`
 | String
 | Yes
-| The Argo CD token.
+| The Argo Workflows token.
 
 | `namespace`
 | String
 | Yes
-| The Argo CD namespace.
+| The Argo Workflows namespace.
 
 | `workflow-name`
 | String
 | Yes
-| The Argo CD workflow name.
+| The Argo Workflows name.
 
 | `parameters`
 | JSON
@@ -46,13 +46,13 @@ In your YAML file, add:
 
 [source,yaml]
 ----
-      - name: Deploy with Argo CD
+      - name: Run Argo Workflows
         uses: cloudbees-io/argocd-run-workflow@v2
         with:
-          url: ${{ ARGO_CD_URL }}
-          token: ${{ ARGO_CD_TOKEN }}
-          namespace: "Argo_CD_namespace"
-          workflow-name: "Argo_CD_workflow_name"
+          url: ${{ ARGO_URL }}
+          token: ${{ ARGO_TOKEN }}
+          namespace: "Argo_namespace"
+          workflow-name: "Argo_workflow_name"
           parameters: '{"BRANCH_NAME":"main","ENV_NAME":"prod"}'
 
 ----
@@ -64,5 +64,5 @@ link:https://opensource.org/license/mit/[MIT license].
 
 == References
 
-* Learn more about link:https://docs.cloudbees.com/docs/cloudbees-saas-platform-actions/latest/[using actions in CloudBees workflows].
-* Learn about link:https://docs.cloudbees.com/docs/cloudbees-saas-platform/latest/[the CloudBees platform].
+* Learn more about link:https://docs.cloudbees.com/docs/cloudbees-platform/latest/actions[using actions in CloudBees workflows]. 
+* Learn about link:https://docs.cloudbees.com/docs/cloudbees-platform/latest/[the CloudBees platform].
