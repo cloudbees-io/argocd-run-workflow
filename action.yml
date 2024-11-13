@@ -23,7 +23,7 @@ runs:
   steps:
     - id: invoke-argocd-action
       name: invoke-argocd-action
-      uses: docker://public.ecr.aws/l7o7z1g8/actions/argocd-actions:main-51dc74e8480187f7580f95a4b7c06095412e8754
+      uses: docker://public.ecr.aws/l7o7z1g8/actions/argocd-actions:main-10404f7edf05c7d617a70c6bbf5049085c3fe5bf
       shell: sh
       env: 
         CONFIG_JSON: '{"metaInfo":{"url":"${{ inputs.url }}","toolType":"ARGOCDACTIONS","password":"${{ inputs.token }}","namespace":"${{ inputs.namespace }}","jobName":"${{ inputs.workflow-name }}","parameters":${{inputs.parameters}}}}'
